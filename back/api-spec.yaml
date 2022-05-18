@@ -12,9 +12,23 @@ paths:
         [ 'healthcheck' ]
       responses:
         '200':
-          description: success
+          description: ok
         '500':
-          description: unexpected error
+          description: server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /hero/all:
+    get:
+      summary: Get all heroes
+      tags:
+        [ 'hero/all' ]
+      responses:
+        '200':
+          description: ok
+        '500':
+          description: server error
           content:
             application/json:
               schema:

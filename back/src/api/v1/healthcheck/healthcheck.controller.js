@@ -1,5 +1,5 @@
 const healthcheck = (req, res) => {
-  res.status(200).send('API is up and running');
+  res.status(200).send('Battlefront Companion API is properly running');
 };
 
 module.exports = {
