@@ -1,1 +1,1 @@
-# battlefront-companion
+# Battlefront Companion App
