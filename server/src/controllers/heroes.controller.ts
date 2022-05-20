@@ -37,12 +37,10 @@ export class HeroesController {
   };
 
   deleteHero = async (req: Request, res: Response) => {
-    try {
-      const heroId: string = req.params.id;
-      await heroesService.deleteHero(heroId);
-      res.status(204).send()
-    } catch (error) {
-      res.status(500).json(error);
-    }
+    const heroId: string = req.params.id;
+
+    await heroesService.deleteHero(heroId);
+    
+    res.status(204).send()
   };
 }
