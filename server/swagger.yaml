@@ -1,7 +1,3 @@
-tags:
-- name: bf_companion_api
-  description: Battlefront Companion API
-
 paths:
   /health-check:
     get:
