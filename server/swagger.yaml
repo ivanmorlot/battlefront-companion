@@ -1,0 +1,130 @@
+tags:
+- name: bf_companion_api
+  description: Battlefront Companion API
+
+paths:
+  /health-check:
+    get:
+      tags:
+      - health-check
+      summary: Check if API is up and running
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+  /heroes:
+    get:
+      tags:
+      - heroes
+      summary: Find All Heroes
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+    post:
+      tags:
+      - heroes
+      summary: Add Hero
+      parameters:
+      - name: body
+        in: body
+        description: Hero Data
+        required: true
+        schema:
+          $ref: '#/definitions/hero'
+      responses:
+        201:
+          description: 'Created'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+  /heroes/{id}:
+    get:
+      tags:
+      - heroes
+      summary: Find Hero by Id
+      parameters:
+      - name: id
+        in: path
+        description: Hero Id
+        required: true
+      responses:
+        200:
+          description: 'OK'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+    put:
+      tags:
+      - heroes
+      summary: Update Hero by Id
+      parameters:
+      - name: id
+        in: path
+        description: Hero Id
+        required: true
+      - name: body
+        in: body
+        description: Hero Data
+        required: true
+        schema:
+          $ref: '#/definitions/hero'
+      responses:
+        200:
+          description: 'OK'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+    delete:
+      tags:
+      - heroes
+      summary: Delete Hero by Id
+      parameters:
+      - name: id
+        in: path
+        description: Hero Id
+        required: true
+      responses:
+        200:
+          description: 'OK'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+
+definitions:
+  hero:
+    type: object
+    required:
+        - name
+        - type
+        - hp
+        - regen
+    properties:
+      id:
+        description: Hero Id
+      name:
+        type: string
+        description: Hero Name
+      type:
+        type: string
+        description: Hero Type
+      hp:
+        type: number
+        description: Hero HP amount
+      regen:
+        type: number
+        description: Hero Regen amount
+
+schemes:
+ - https
+ - http

@@ -1,0 +1,16 @@
+{
+    "env": "production",
+    "dbConfig": {
+        "host": "localhost",
+        "database": "bfcompanion",
+        "port": 27017
+    },
+    "log": {
+        "format": "combined",
+        "dir": "../logs"
+    },
+    "cors": {
+        "origin": "*",
+        "credentials": true
+    }
+}
