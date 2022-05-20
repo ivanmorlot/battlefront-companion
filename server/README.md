@@ -15,4 +15,4 @@ npm run dev
 ```
 
 ## Get started :
-- Swagger specs: http://localhost:3000/api/v1/api-specs/
+- Swagger specs: http://localhost:3000/api-specs/
