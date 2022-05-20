@@ -106,8 +106,6 @@ definitions:
         - hp
         - regen
     properties:
-      id:
-        description: Hero Id
       name:
         type: string
         description: Hero Name

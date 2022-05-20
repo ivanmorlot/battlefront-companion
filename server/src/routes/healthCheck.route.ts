@@ -4,10 +4,10 @@ import { IRoutes } from '~interfaces/routes.interface';
 
 const controller = new HealthCheckController();
 
-export class HealthCheckRoute implements IRoutes {
+export class HealthCheckRoutes implements IRoutes {
   public path = '/health-check';
   public router = Router();
-
+  
   constructor() {
     this.initializeRoutes();
   }

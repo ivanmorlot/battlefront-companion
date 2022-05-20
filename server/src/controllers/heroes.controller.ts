@@ -40,9 +40,8 @@ export class HeroesController {
     try {
       const heroId: string = req.params.id;
       await heroesService.deleteHero(heroId);
-      res.status(204);
-    }
-    catch (error) {
+      res.status(204).send()
+    } catch (error) {
       res.status(500).json(error);
     }
   };
